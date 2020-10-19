@@ -1,3 +1,12 @@
 <template>
-  <h1>Create Label</h1>
+  <div class="create-label-container col-12 col-lg-10 offset-lg-1">
+    Hello there
+  </div>
 </template>
+
+<style scoped>
+  .create-label-container {
+    background-color: white;
+    height: 300px;
+  }
+</style>

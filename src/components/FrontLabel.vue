@@ -39,6 +39,7 @@ export default {
         color: #ffffff;
         transform: rotate(-12deg);
         font-size: 3vw;
+        z-index: 100
     }
 
     .watermark {

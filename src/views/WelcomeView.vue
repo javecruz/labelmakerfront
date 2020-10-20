@@ -14,17 +14,16 @@
 </template>
 
 <script>
+  import FrontLabel from '../components/FrontLabel.vue';
+  import WelcomeBox from '../components/WelcomeBox.vue';
 
-import FrontLabel from '../components/FrontLabel.vue';
-import WelcomeBox from '../components/WelcomeBox.vue';
-
-export default {
-  components: {
-    FrontLabel,
-    WelcomeBox
+  export default {
+    components: {
+      FrontLabel,
+      WelcomeBox
+    }
+    
   }
-  
-}
 </script>
 
 <style scoped>
@@ -32,13 +31,4 @@ export default {
     background-color: rgba(255, 255, 255, 0.6);
     height: 300px;
   }
-
-  .h-80 {
-    height: 80%;
-  }
-
-  .h-100 {
-    height: 100%;
-  }
-
 </style>

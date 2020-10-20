@@ -15,6 +15,7 @@
 </template>
 
 <style>
+/** GLOBAL STYLING */
   html, body, #app, #root, .content {
     height: 100%;
     width: 100%;
@@ -28,5 +29,14 @@
   .custom-blue {
     color: #24B5BC;
   }
+
+  .h-80 {
+    height: 80%;
+  }
+
+  .h-100 {
+    height: 100%;
+  }
+
 </style>
 

@@ -21,6 +21,11 @@
           </div>
         </div>
       </div>
+      <div class="row pt-2">
+        <div class="col-7 offset-5 d-flex">
+          <button type="button" class="btn btn-primary btn-lg custom-button m-auto">OK</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -41,5 +46,11 @@
   .create-label-container {
     background-color: rgba(255, 255, 255, 0.6);
     height: 300px;
+  }
+  .custom-button {
+    background: #24B5BC;
+  }
+  .custom-button:hover {
+    background: #0e2d6b;
   }
 </style>

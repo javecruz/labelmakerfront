@@ -5,7 +5,7 @@
             Hello Developer-to-be! Let's make some customised chocolate bar covers
         </p>
     </div>
-        <div class="col-12 d-flex justify-content-center">
+    <div class="col-12 d-flex justify-content-center">
         <button type="button" class="btn btn-primary btn-lg custom-button" @click="$router.push('create')">START</button>
     </div>
 </template>

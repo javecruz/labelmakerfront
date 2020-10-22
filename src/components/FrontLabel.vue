@@ -1,7 +1,7 @@
 <template>
     <div class="tablet-container">
         <div class="text-container">
-        YOUR OWN TEXT
+            {{ textContent }}
         </div>
         <div class="watermark">
         PREVIEW
@@ -11,9 +11,18 @@
 
 
 <script>
-export default {
-    setup() {}
-}
+    import { toRef } from 'vue';
+
+    export default {
+        props: {
+            textValue: String
+        },
+        setup(props) {
+            return {
+                textContent: toRef(props, "textValue")
+            }
+        }
+    }
 </script>
 
 

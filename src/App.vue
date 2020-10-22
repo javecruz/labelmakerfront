@@ -34,8 +34,16 @@
     height: 80%;
   }
 
-  .h-100 {
-    height: 100%;
+  .custom-button {
+    background: #24B5BC;
+  }
+
+  .custom-button:hover {
+    background: #0e2d6b;
+  }
+
+  .app-bg-color {
+    background-color: rgba(255, 255, 255, 0.6);
   }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="tablet-container">
         <div class="text-container">
-            <p class="custom-value m-0">Definitely. It's a longer text here for greetings.</p>
+            <p class="custom-value m-0">{{ textContent }}</p>
         </div>
         <div class="watermark">
             PREVIEW
@@ -11,9 +11,19 @@
 
 
 <script>
-export default {
-    setup() {}
-}
+    import { toRef } from 'vue';
+
+    export default {
+        
+        props: {
+            textValue: String
+        },
+        setup(props) {
+            return {
+                textContent: toRef(props, "textValue")
+            }
+        }
+    }
 </script>
 
 

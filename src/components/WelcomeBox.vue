@@ -19,11 +19,6 @@ export default {
 </script>
 
 <style scoped>
-    .custom-button {
-        background: #24B5BC;
-    }
-    .custom-button:hover {
-        background: #0e2d6b;
-    }
+
 </style>
 

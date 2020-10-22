@@ -18,7 +18,7 @@ const routes = [
     path: "/done",
     name: "Done",
     component: DoneView,
-  },
+  }
 ];
 
 const router = createRouter({

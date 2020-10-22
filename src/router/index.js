@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import WelcomeView from '../views/WelcomeView.vue';
 import CreateLabelView from '../views/CreateLabelView.vue';
-import DoneView from '../views/DoneView.vue';
+import DetailView from '../views/DetailView.vue';
 
 const routes = [
   {
@@ -15,9 +15,10 @@ const routes = [
     component: CreateLabelView,
   },
   {
-    path: "/done",
-    name: "Done",
-    component: DoneView,
+    path: "/detail/:labelId",
+    name: "Label Details",
+    component: DetailView,
+    props: true
   }
 ];
 

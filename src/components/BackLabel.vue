@@ -14,7 +14,6 @@
     import { toRef } from 'vue';
 
     export default {
-        
         props: {
             textValue: String
         },

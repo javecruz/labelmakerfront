@@ -23,7 +23,8 @@
       </div>
       <div class="row pt-2">
         <div class="col-7 offset-5 d-flex">
-          <button type="button" class="btn btn-primary btn-lg custom-button m-auto">OK</button>
+          <button type="button" class="btn btn-primary btn-lg custom-button m-auto" @click="triggerCreate()">OK</button>
+          <p v-if="isError">There was a server error.</p>
         </div>
       </div>
     </div>
@@ -31,19 +32,64 @@
 </template>
 
 <script>
-	import { ref } from 'vue';
+  import { onMounted, ref } from 'vue';
+  
 	import FrontLabel from '../components/FrontLabel.vue';
-	import BackLabel from '../components/BackLabel.vue';
+  import BackLabel from '../components/BackLabel.vue';
+  import { createLabel } from '../services/LabelService.js';
+  import { login } from '../services/AuthService';
+  import router from '../router/index.js';
+
 
 	export default {
 		components: {
 			FrontLabel, 
-			BackLabel
+      BackLabel
 		},
 		setup() {
+      let userFrontText = ref("")
+      let userBackText = ref("")
+      let isError = ref(false)
+      let token = ref("")
+      window.javi = router
+      onMounted(() => {
+        login()
+          .then(res => {
+            isError.value = false
+            token.value = res.data.token
+            console.log("TOKEN:" + res.data.token)
+          })
+          .catch(error => {
+            console.log("There was an error loging in. " + error)
+            isError.value = true
+            })
+      })
+
+      function triggerCreate() {
+        createLabel(
+          {
+            userFrontText: userFrontText.value,
+            userBackText: userBackText.value
+          },token.value)
+          .then(res => {
+            isError.value = false;
+            console.log("Created label with id: " + res.data.id)
+            router.push(`/detail/${res.data.id}`);
+          })
+          .catch(error => {
+            console.log("There was an error creating label. " + error)
+            isError.value = true
+          })
+      }
+
 			return {
-				userFrontText: ref(""),
-				userBackText: ref("")
+        // Vars
+				userFrontText,
+        userBackText,
+        isError,
+        token,
+        // Methods
+        triggerCreate
 			}
 		}
 	}

@@ -14,7 +14,7 @@
         </div>
         <div class="col-12 col-lg-7 mt-3">
           <p class="text-center">Thanks! We are ready now!</p>
-          <button type="button" class="btn btn-primary btn-lg custom-button d-block m-auto">DONE</button>
+          <button type="button" class="btn btn-primary btn-lg custom-button d-block m-auto" @click="$router.push('/')">DONE</button>
         </div>
       </div>
     </div>
@@ -40,10 +40,9 @@
       let frontText = ref("")
       let backText = ref("")
       onMounted(() => {
-        let promise = getLabel(props.labelId)
-        promise.then((data) => {
-          frontText.value = data.front_text ? data.front_text : ""
-          backText.value = data.back_text ? data.back_text : ""
+        getLabel(props.labelId).then((res) => {
+          frontText.value = res.data.front_text ? res.data.front_text : ""
+          backText.value = res.data.back_text ? res.data.back_text : ""
         })
       })
       return {

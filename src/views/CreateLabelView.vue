@@ -23,7 +23,7 @@
       </div>
       <div class="row pt-2">
         <div class="col-7 offset-5 d-flex">
-          <button type="button" class="btn btn-primary btn-lg custom-button m-auto" @click="triggerCreate()">OK</button>
+          <button type="button" class="btn btn-primary btn-lg custom-button m-auto" @click="triggerCreate()" :disabled="userFrontText.length == 0 || userBackText.length == 0 ? true : null">OK</button>
           <p v-if="isError">There was a server error.</p>
         </div>
       </div>
@@ -51,7 +51,7 @@
       let userBackText = ref("")
       let isError = ref(false)
       let token = ref("")
-      window.javi = router
+
       onMounted(() => {
         login()
           .then(res => {

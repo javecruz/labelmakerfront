@@ -17,7 +17,7 @@
         </div>
         <div class="col-12 col-lg-7">
           <div class="input-group mb-3">
-            <input type="text" v-model="userBackText" maxlength="50" class="form-control" placeholder="Back text here." aria-describedby="basic-addon1">
+            <input type="text" v-model="userBackText" maxlength="24" class="form-control" placeholder="Back text here." aria-describedby="basic-addon1">
           </div>
         </div>
       </div>

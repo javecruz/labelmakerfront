@@ -35,7 +35,7 @@
   }
 
   .custom-button {
-    background: #24B5BC;
+    background: #24B5BC !important;
   }
 
   .custom-button:hover {

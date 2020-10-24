@@ -1,5 +1,14 @@
 # labelmaker
 
+# IMPORTANT
+REQUIERES A CREATED USER TO WORK 
+Create it in backend on following view
+POST http://localhost:8000/api/users/create/
+{
+	"email": "user123@gmail.com",
+	"password": "Password1!"
+}
+
 ## Project setup
 ```
 npm install
